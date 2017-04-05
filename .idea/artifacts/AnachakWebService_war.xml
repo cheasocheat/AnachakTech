@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="AnachakWebService:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="anachakwebservice.war">
-      <element id="artifact" artifact-name="AnachakWebService:war exploded" />
-    </root>
-  </artifact>
-</component>
