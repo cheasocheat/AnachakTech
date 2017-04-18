@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by cheasocheat on 4/6/17.
@@ -13,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ArticleController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String sayHello(ModelMap model) {
-        model.addAttribute("greeting", "Hello World from Spring 4 MVC");
-        return "welcome";
+    public ModelAndView sayHello(ModelMap model) {
+       /* model.addAttribute("greeting", "Hello World from Spring 4 MVC");
+        return "welcome";*/
+
+        String myMessage = "Welcome to AnachakTech!";
+        return new ModelAndView("welcome", "message", myMessage);
     }
 
     @RequestMapping(value = "/helloagain", method = RequestMethod.GET)
