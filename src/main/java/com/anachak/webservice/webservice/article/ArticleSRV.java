@@ -14,7 +14,7 @@ import java.util.List;
  * Created by cheasocheat on 4/6/17.
  */
 @Path("article")
-public class ArticleSrv {
+public class ArticleSRV {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

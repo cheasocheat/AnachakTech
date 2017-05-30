@@ -66,6 +66,14 @@
           <version>4.0.0-b05</version>
       </dependency>
 
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>3.0-alpha-1</version>
+    </dependency>
+
+
     <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -75,7 +83,7 @@
 
   </dependencies>
   <build>
-    <finalName>anachakwebservice</finalName>
+    <finalName>anachaktech</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -93,7 +101,7 @@
           <version>2.4</version>
           <configuration>
             <warSourceDirectory>src/main/webapp</warSourceDirectory>
-            <warName>anachakwebservice</warName>
+            <warName>anachaktech</warName>
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
         </plugin>
