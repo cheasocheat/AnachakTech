@@ -12,8 +12,15 @@ public class Article {
     private String summary;
     private String description;
 
+    public Article(){}
+    public Article(int id, String summary, String description){
+        this.id = id;
+        this.summary = summary;
+        this.description = description;
+    }
+
     @Id
-    @Column(name="id")
+    @Column(name="atc_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     public int getId() {
         return id;
@@ -23,6 +30,7 @@ public class Article {
         this.id = id;
     }
 
+    @Column(name = "atc_summary", nullable = true)
     public String getSummary() {
         return summary;
     }
@@ -31,6 +39,7 @@ public class Article {
         this.summary = summary;
     }
 
+    @Column(name = "atc_desc", nullable = true)
     public String getDescription() {
         return description;
     }

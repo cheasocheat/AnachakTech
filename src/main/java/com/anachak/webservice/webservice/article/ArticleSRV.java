@@ -1,6 +1,9 @@
 package com.anachak.webservice.webservice.article;
 
 import com.anachak.webservice.model.Article;
+import com.anachak.webservice.service.ArticleService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -13,8 +16,12 @@ import java.util.List;
 /**
  * Created by cheasocheat on 4/6/17.
  */
+@Controller
 @Path("article")
 public class ArticleSRV {
+
+    @Autowired
+    private ArticleService articleService;
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -27,15 +34,7 @@ public class ArticleSRV {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public List<Article> listAllArticle(){
-        List<Article> lstArticles = new ArrayList<>();
-        Article article = null;
-        for (int i = 1; i <= 10; i++) {
-            article = new Article();
-            article.setId(i);
-            article.setSummary("Article " + i);
-            article.setDescription("Desc " + i);
-            lstArticles.add(article);
-        }
-        return lstArticles;
+        List<Article> lstArticles = articleService.listArticles();
+        return lstArticles == null ? new ArrayList<>() : lstArticles;
     }
 }

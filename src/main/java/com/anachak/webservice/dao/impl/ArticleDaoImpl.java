@@ -32,14 +32,16 @@ public class ArticleDaoImpl implements ArticleDao {
 
     @Override
     public void updateArticle(Article article) {
-
+        Session session = this.sessionFactory.getCurrentSession();
+        session.update(article);
+        logger.info("Article updated successfully, Article Details="+article);
     }
 
     @Override
     public List<Article> listArticles() {
         logger.info(">>Anachak :: list article");
         Session session = this.sessionFactory.getCurrentSession();
-        List<Article> lstArticles = session.createQuery("from td_article").list();
+        List<Article> lstArticles = session.createQuery("from Article").list();
         for (Article article : lstArticles) {
             logger.info("Article List :: " + article);
         }
@@ -48,11 +50,19 @@ public class ArticleDaoImpl implements ArticleDao {
 
     @Override
     public void deleteArticle(int id) {
-
+        Session session = this.sessionFactory.getCurrentSession();
+        Article article = (Article) session.load(Article.class, new Integer(id));
+        if (null != article) {
+            session.delete(article);
+        }
+        logger.info("Article deleted successfully, Article details=" + article);
     }
 
     @Override
     public Article getArticleById(int id) {
-        return null;
+        Session session = this.sessionFactory.getCurrentSession();
+        Article article = (Article) session.load(Article.class, new Integer(id));
+        logger.info("Article loaded successfully, Article details=" + article);
+        return article;
     }
 }
