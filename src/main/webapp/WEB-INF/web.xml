@@ -4,6 +4,18 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
  				http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>Anachak Tech Web Application</display-name>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/app-main-context.xml</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>
@@ -17,7 +29,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <servlet>
+   <!-- <servlet>
         <servlet-name>Jersey REST Service</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
@@ -25,7 +37,20 @@
             <param-value>com.anachak.webservice.webservice</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+    </servlet>-->
+
+    <servlet>
+        <servlet-name>Jersey REST Service</servlet-name>
+        <servlet-class>
+            org.glassfish.jersey.servlet.ServletContainer
+        </servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>org.codingpedia.demo.rest.service.MyApplication</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
+
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>

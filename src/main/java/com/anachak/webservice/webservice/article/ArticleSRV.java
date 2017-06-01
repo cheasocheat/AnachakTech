@@ -3,6 +3,7 @@ package com.anachak.webservice.webservice.article;
 import com.anachak.webservice.model.Article;
 import com.anachak.webservice.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import javax.ws.rs.Consumes;
@@ -16,7 +17,7 @@ import java.util.List;
 /**
  * Created by cheasocheat on 4/6/17.
  */
-@Controller
+@Component
 @Path("article")
 public class ArticleSRV {
 
