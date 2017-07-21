@@ -1,4 +1,4 @@
-package com.anachak.webservice.webservice.article;
+package com.anachak.webservice.webservice;
 
 import com.anachak.webservice.model.Article;
 import com.anachak.webservice.service.ArticleService;

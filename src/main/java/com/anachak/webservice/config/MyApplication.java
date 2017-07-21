@@ -1,6 +1,6 @@
-package com.anachak.webservice;
+package com.anachak.webservice.config;
 
-import com.anachak.webservice.webservice.article.ArticleSRV;
+import com.anachak.webservice.webservice.ArticleSRV;
 import org.glassfish.jersey.server.ResourceConfig;
 
 /**
