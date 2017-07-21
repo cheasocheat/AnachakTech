@@ -29,24 +29,22 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-   <!-- <servlet>
-        <servlet-name>Jersey REST Service</servlet-name>
-        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.anachak.webservice.webservice</param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>Jersey REST Service</servlet-name>-->
+        <!--<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>-->
+        <!--<init-param>-->
+            <!--<param-name>jersey.config.server.provider.packages</param-name>-->
+            <!--<param-value>com.anachak.webservice.webservice</param-value>-->
+        <!--</init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
 
     <servlet>
         <servlet-name>Jersey REST Service</servlet-name>
-        <servlet-class>
-            org.glassfish.jersey.servlet.ServletContainer
-        </servlet-class>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>org.codingpedia.demo.rest.service.MyApplication</param-value>
+            <param-value>com.anachak.webservice.MyApplication</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
